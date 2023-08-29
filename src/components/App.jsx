@@ -1,45 +1,21 @@
-import {
-  AddContactWrapper,
-  ContactsWrapper,
-  Container,
-  HeaderApp,
-  HeaderContacts,
-} from './App.styled';
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
-import { ContactList } from './ContactsList/ContactList';
-import { Modal } from 'components/Modal/Modal';
-import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+import { lazy } from 'react';
+import { RestrictedRoute } from './RestrictedRoute';
 
+const HomePage = lazy(() => import('../pages/Home'));
+const LoginPage = lazy(() => import('../pages/Login'));
 export function App() {
-  const [showModal, setShowModal] = useState(false);
-  const [contactId, setContactId] = useState(null);
-
-  const onShowModalClick = contactId => {
-    setContactId(contactId);
-    setShowModal(true);
-  };
-
-  const onBackdropClose = () => {
-    setShowModal(false);
-  };
+  const isAuth = false;
   return (
-    <>
-      <Container>
-        <AddContactWrapper>
-          <HeaderApp>Phonebook</HeaderApp>
-          <ContactForm />
-        </AddContactWrapper>
-        <ContactsWrapper>
-          <Filter />
-          <HeaderContacts>Contacts</HeaderContacts>
-          <ContactList onShowModalClick={onShowModalClick} />
-        </ContactsWrapper>
-      </Container>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
 
-      {showModal && (
-        <Modal onBackdropClose={onBackdropClose} contactId={contactId} />
-      )}
-    </>
+        <Route element={<RestrictedRoute isVisible={isAuth} redirectTo="/" />}>
+          <Route path="login" element={<LoginPage />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 }
