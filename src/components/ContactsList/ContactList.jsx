@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as services from 'services/notify';
 
 import { sortOrderConst } from 'constants';
-import { sortOrder } from 'redux/sortSlice';
+import { sortOrder } from 'redux/phonebook/sortSlice';
 
 import {
   contactsSelector,
@@ -26,9 +26,9 @@ import {
   filterSelector,
   isLoadingSelector,
   sortSelector,
-} from 'redux/selectors';
+} from 'redux/phonebook/selectors';
 import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'redux/operations';
+import { deleteContact, fetchContacts } from 'redux/phonebook/operations';
 import { Loader } from 'components/Loader';
 
 export function ContactList({ onShowModalClick }) {

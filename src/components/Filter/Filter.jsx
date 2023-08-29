@@ -5,8 +5,8 @@ import {
 } from 'components/ContactForm/ContactForm.styled';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { filteredQuery } from 'redux/filterSlice';
-import { filterSelector } from 'redux/selectors';
+import { filteredQuery } from 'redux/phonebook/filterSlice';
+import { filterSelector } from 'redux/phonebook/selectors';
 
 export function Filter() {
   const dispatch = useDispatch();

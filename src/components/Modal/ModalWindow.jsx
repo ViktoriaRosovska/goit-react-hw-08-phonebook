@@ -9,8 +9,8 @@ import {
   ModalLabel,
   Overlay,
 } from './Modal.styled';
-import { contactsSelector } from 'redux/selectors';
-import { editContact } from 'redux/operations';
+import { contactsSelector } from 'redux/phonebook/selectors';
+import { editContact } from 'redux/phonebook/operations';
 import { useState } from 'react';
 import { FormInput } from 'components/ContactForm/ContactForm.styled';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';

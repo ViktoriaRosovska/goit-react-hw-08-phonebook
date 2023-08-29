@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import * as services from '../../services/notify';
 
-import { contactsSelector } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { contactsSelector } from 'redux/phonebook/selectors';
+import { addContact } from 'redux/phonebook/operations';
 
 export function ContactForm() {
   const items = useSelector(contactsSelector);
