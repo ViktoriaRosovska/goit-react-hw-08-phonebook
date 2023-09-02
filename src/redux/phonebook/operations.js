@@ -60,7 +60,6 @@ export const editContact = createAsyncThunk(
       const response = await axios.patch(`/contacts/${id}`, {
         name,
         number,
-        id,
       });
       services.Notify.success(`Contact ${name} was saved`);
       return response.data;
