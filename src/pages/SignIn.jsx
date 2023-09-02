@@ -13,9 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { signin } from 'redux/auth/operations';
-import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
-import { selectIsLoggedIn } from 'redux/auth/authSelectors';
+import { useDispatch } from 'react-redux';
 
 function Copyright(props) {
   return (
@@ -44,7 +42,6 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const isAuth = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
   const handleSubmit = event => {
     event.preventDefault();
@@ -57,12 +54,14 @@ export default function SignIn() {
       email: data.get('email'),
       password: data.get('password'),
     };
+
     dispatch(signin(user));
+
+    event.currentTarget.reset();
   };
 
   return (
     <>
-      {isAuth && <Navigate to={'/contacts'} />}
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />

@@ -104,7 +104,7 @@ export function ContactList({ onShowModalClick }) {
           <ul>
             {filtered.map(contact => (
               <List key={contact.id}>
-                <Span>{contact.name}</Span> <Span>{contact.phone}</Span>
+                <Span>{contact.name}</Span> <Span>{contact.number}</Span>
                 <Button type="button" onClick={() => isShowModal(contact.id)}>
                   <SvgIcon
                     style={{ fontSize: 'medium' }}

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as services from '../../services/notify';
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+// axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
@@ -54,10 +54,15 @@ export const deleteContact = createAsyncThunk(
 
 export const editContact = createAsyncThunk(
   'contacts/editContact',
-  async (user, thunkAPI) => {
+  async (contact, thunkAPI) => {
     try {
-      const response = await axios.put(`/contacts/${user.id}`, user);
-      services.Notify.success(`Contact ${user.name} was saved`);
+      const { name, number, id } = contact;
+      const response = await axios.patch(`/contacts/${id}`, {
+        name,
+        number,
+        id,
+      });
+      services.Notify.success(`Contact ${name} was saved`);
       return response.data;
     } catch (error) {
       services.Notify.failure(

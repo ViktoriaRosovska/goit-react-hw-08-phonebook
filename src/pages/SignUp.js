@@ -51,18 +51,17 @@ export default function SignUp() {
       email: data.get('email'),
       password: data.get('password'),
     };
-    // console.log({
-    //   name: data.get('firstName') + ' ' + data.get('lastName'),
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
+    console.log({
+      name: data.get('firstName') + ' ' + data.get('lastName'),
+      email: data.get('email'),
+      password: data.get('password'),
+    });
     dispatch(signup(user));
     event.currentTarget.reset();
   };
-
+  if (isAuth) return <Navigate to="/contacts" />;
   return (
     <>
-      {isAuth && <Navigate to={'/contacts'} />}
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />

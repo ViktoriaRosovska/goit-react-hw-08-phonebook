@@ -6,6 +6,7 @@ import {
   deleteContact,
   editContact,
 } from './operations';
+import { logout } from 'redux/auth/operations';
 
 const phonebookSlice = createSlice({
   name: 'contacts',
@@ -44,6 +45,11 @@ const phonebookSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
+      })
+      .addCase(logout.fulfilled, state => {
+        state.items = [];
+        state.error = null;
+        state.isLoading = false;
       })
       .addMatcher(
         action => action.type.endsWith('/rejected'),
