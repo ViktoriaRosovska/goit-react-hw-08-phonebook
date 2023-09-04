@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const ContactsListContainer = styled.div`
+  color: black;
   background-color: white;
   border-radius: 10px;
   width: 340px;

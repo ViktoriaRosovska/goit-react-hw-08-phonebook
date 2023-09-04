@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin-right: auto;
+  /* margin-right: auto;
   margin-left: auto;
   background-color: lightpink;
   border-radius: 10px;
@@ -18,7 +18,7 @@ const Container = styled.div`
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) -10px -5px 0px -10px,
     rgba(0, 0, 0, 0.3) 2px 4px 5px -2px;
   box-shadow: rgba(50, 50, 93, 0.25) -10px -5px 0px -10px,
-    rgba(0, 0, 0, 0.3) 2px 4px 5px -2px;
+    rgba(0, 0, 0, 0.3) 2px 4px 5px -2px; */
 `;
 
 const HeaderApp = styled.h1`

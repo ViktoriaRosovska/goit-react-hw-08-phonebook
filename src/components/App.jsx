@@ -3,10 +3,13 @@ import { Layout } from './Layout/Layout';
 import { lazy, useEffect } from 'react';
 import { PublicRoute } from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
-import Phonebook from 'pages/Phonebook';
+import Phonebook from '../pages/Phonebook';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn, selectIsRefreshing } from 'redux/auth/authSelectors';
-import { refreshUser } from 'redux/auth/operations';
+import {
+  selectIsLoggedIn,
+  selectIsRefreshing,
+} from '../redux/auth/authSelectors';
+import { refreshUser } from '../redux/auth/operations';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const SignUpPage = lazy(() => import('../pages/SignUp'));
@@ -19,8 +22,7 @@ export function App() {
 
   useEffect(() => {
     dispatch(refreshUser());
-    console.log(location);
-  }, [dispatch, location]);
+  }, [dispatch]);
   return isRefreshing ? (
     <Navigate to={location} />
   ) : (

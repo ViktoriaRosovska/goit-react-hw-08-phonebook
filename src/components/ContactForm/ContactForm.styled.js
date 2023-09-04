@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const FormWrapper = styled.div`
   background-color: white;
+  color: black;
   width: 340px;
   display: flex;
   justify-content: center;

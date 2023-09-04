@@ -15,10 +15,10 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useDispatch, useSelector } from 'react-redux';
 
-import * as services from 'services/notify';
+import * as services from '../../services/notify';
 
-import { sortOrderConst } from 'constants';
-import { sortOrder } from 'redux/phonebook/sortSlice';
+import { sortOrderConst } from '../../constants';
+import { sortOrder } from '../../redux/phonebook/sortSlice';
 
 import {
   contactsSelector,

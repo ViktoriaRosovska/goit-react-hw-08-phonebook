@@ -1,7 +1,6 @@
 import {
   AddContactWrapper,
   ContactsWrapper,
-  Container,
   HeaderApp,
   HeaderContacts,
 } from '../../src/components/App.styled';
@@ -24,17 +23,15 @@ export default function Phonebook() {
   };
   return (
     <>
-      <Container>
-        <AddContactWrapper>
-          <HeaderApp>Phonebook</HeaderApp>
-          <ContactForm />
-        </AddContactWrapper>
-        <ContactsWrapper>
-          <Filter />
-          <HeaderContacts>Contacts</HeaderContacts>
-          <ContactList onShowModalClick={onShowModalClick} />
-        </ContactsWrapper>
-      </Container>
+      <AddContactWrapper>
+        <HeaderApp>Phonebook</HeaderApp>
+        <ContactForm />
+      </AddContactWrapper>
+      <ContactsWrapper>
+        <Filter />
+        <HeaderContacts>Contacts</HeaderContacts>
+        <ContactList onShowModalClick={onShowModalClick} />
+      </ContactsWrapper>
 
       {showModal && (
         <Modal onBackdropClose={onBackdropClose} contactId={contactId} />
