@@ -4,6 +4,7 @@ import {
   Button,
   Container,
   CssBaseline,
+  Switch,
   ThemeProvider,
   Toolbar,
   Typography,
@@ -20,7 +21,6 @@ import { changeTheme } from 'redux/theme/slice';
 import { darkTheme, lightTheme } from '../../styles/theme';
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import Switch from '@mui/material/Switch';
 
 const useStyle = makeStyles(theme => ({
   transparentToolbar: {
