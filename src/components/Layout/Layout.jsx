@@ -5,9 +5,9 @@ import {
   Container,
   CssBaseline,
   ThemeProvider,
+  Toolbar,
   Typography,
 } from '@mui/material';
-import Toolbar from '@material-ui/core/Toolbar';
 // import { Container } from 'components/App.styled';
 import { Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,7 +19,7 @@ import { selectTheme } from 'redux/theme/selectors';
 import { changeTheme } from 'redux/theme/slice';
 import { darkTheme, lightTheme } from '../../styles/theme';
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
 import Switch from '@mui/material/Switch';
 
 const useStyle = makeStyles(theme => ({
